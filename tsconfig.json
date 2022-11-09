@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +14,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src"
-  ]
+    "jsx": "react-jsx",
+
+    "baseUrl": "./src", // complier sẽ tính gốc bắt đầu từ src
+    "paths": {
+      "Components/*": ["Components/*"],
+      "Assets/*": ["Assets/*"],
+      "Pages/*": ["Pages/*"],
+      "Types/*": ["Types/*"],
+      "Templates/*": ["Templates/*"],
+      "Utils/*": ["Utils/*"]
+
+    }
+  }
 }

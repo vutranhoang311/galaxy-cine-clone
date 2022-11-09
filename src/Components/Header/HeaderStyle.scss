@@ -1,0 +1,140 @@
+$base-color: #a0a3a7;
+$accent-color: #f26b38;
+.header {
+  position: relative;
+  background-color: #f7f9fa;
+  transition: all 0.3s;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  .header-logo-mobile {
+    display: none;
+    max-height: 50px;
+    @media screen and (max-width: 992px) {
+      display: block;
+    }
+  }
+  .header-logo {
+    max-width: 250px;
+    max-height: 50px;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .navbar {
+    .row {
+      width: 100%;
+    }
+  }
+}
+
+.secondary-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $base-color;
+  @media (max-width: 768) {
+    justify-content: flex-end;
+  }
+  .search {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .header-user {
+    display: flex;
+    a {
+      text-decoration: none;
+      color: $base-color;
+      font-size: 1.125rem;
+      span {
+        margin-left: 0.3rem;
+      }
+      &:hover {
+        color: $accent-color;
+      }
+    }
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+.search {
+  display: flex;
+
+  .search-field {
+    border: 1px solid $base-color;
+    position: relative;
+    .search-movie-input {
+      border: none;
+      padding: 6px 25px 6px 10px;
+      width: 250px;
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $base-color;
+        opacity: 1; /* Firefox */
+      }
+      &:focus-visible {
+        border: 1px solid $base-color;
+        outline: none;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $base-color;
+    }
+  }
+}
+.nav-menu {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.toggle-menu-nav {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  &.active {
+    height: 250px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .toggle-menu-nav-content {
+    .item {
+      margin-bottom: 1rem;
+      text-align: right;
+      margin-right: 1rem;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: $base-color;
+    font-weight: 500;
+    transition: 0.3s all ease-in-out;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .search {
+    justify-content: end;
+  }
+}
